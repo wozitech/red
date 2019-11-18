@@ -4,6 +4,7 @@
   "description": "Martian Robots Tech Challenge",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint --ext .js ./src ./tests",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,5 +23,13 @@
   "homepage": "https://github.com/wozitech/red#readme",
   "dependencies": {
     "jest": "^24.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.6.0",
+    "eslint-config-strongloop": "^2.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^23.0.4",
+    "eslint-plugin-wyze": "^3.4.0"
   }
 }
