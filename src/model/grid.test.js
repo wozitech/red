@@ -1,4 +1,4 @@
-const Grid = require('./grid').Grid;
+const Grid = require('./grid');
 
 global.console = {
   error: jest.fn(),

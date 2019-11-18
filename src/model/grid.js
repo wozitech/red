@@ -40,4 +40,4 @@ class Grid {
   }
 };
 
-module.exports.Grid = Grid;
+module.exports = Grid;
