@@ -1,0 +1,26 @@
+{
+  "name": "red",
+  "version": "1.0.0",
+  "description": "Martian Robots Tech Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wozitech/red.git"
+  },
+  "keywords": [
+    "nodejs",
+    "challenge"
+  ],
+  "author": "Warren Ayling",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wozitech/red/issues"
+  },
+  "homepage": "https://github.com/wozitech/red#readme",
+  "dependencies": {
+    "jest": "^24.9.0"
+  }
+}
