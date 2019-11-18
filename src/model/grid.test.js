@@ -27,12 +27,29 @@ describe('Grid Awareness', () => {
     }).toThrow(Error);
   });
 
-  it ("should fail if Y is negative", () => {
+  it ('should fail if Y is negative', () => {
     const newGrid = new Grid();
 
     expect(() => {
       newGrid.y = 0;
     }).toThrow(Error);
+  });
+
+  it ('should fail if not valid', () => {
+    const newGridX = new Grid();
+    const newGridY = new Grid();
+    expect(newGridX.isValid).toBe(false);
+    expect(newGridY.isValid).toBe(false);
+
+    newGridX.x = 4;
+    expect(newGridX.isValid).toBe(false);
+    newGridX.y = 4;
+    expect(newGridX.isValid).toBe(true);
+
+    newGridY.y = 4;
+    expect(newGridY.isValid).toBe(false);
+    newGridY.x = 4;
+    expect(newGridY.isValid).toBe(true);
   });
 });
 
