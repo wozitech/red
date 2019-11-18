@@ -31,6 +31,11 @@ class Grid {
 
     return false;
   }
+  
+  // returns true if known x & y
+  get isValid() {
+    return (this._x !== null) && (this._y !== null);
+  }
 
   toString() {
     return {
