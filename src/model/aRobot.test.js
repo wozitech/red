@@ -82,18 +82,57 @@ describe('Robot Orientiation', () => {
 });
 
 describe('Robot Movement', () => {
-  beforeAll (() => {});
-  beforeEach (() => {});
+  let newGrid;
+  let newRobot;
+  beforeAll (() => {
+    newGrid = new Grid();
+    newGrid.x = 4;
+    newGrid.y = 4;
+  });
+  beforeEach (() => {
+    // start in the middle of the grid
+    newRobot = new Robot(newGrid, 2,2,'N');
+    expect(newRobot.currentPosition).not.toBeNull();
+  });
+
+  it ('should take good command', () => {
+    expect(() => {
+      newRobot.move('O');
+    }).toThrow('Unexpected move command')
+  });
 
   it ('should move north', () => {
+    newRobot.move('F');
+    expect(newRobot.currentPosition.x).toBe(2);
+    expect(newRobot.currentPosition.y).toBe(3);
+    expect(newRobot.currentPosition.o).toBe('N');
   });
 
   it ('should move east', () => {
+    newRobot.move('R');
+    newRobot.move('F');
+    expect(newRobot.currentPosition.x).toBe(3);
+    expect(newRobot.currentPosition.y).toBe(2);
+    expect(newRobot.currentPosition.o).toBe('E');
   });
 
   it ('should move south', () => {
+    newRobot.move('R');
+    newRobot.move('R');
+    newRobot.move('F');
+    expect(newRobot.currentPosition.x).toBe(2);
+    expect(newRobot.currentPosition.y).toBe(1);
+    expect(newRobot.currentPosition.o).toBe('S');
   });
 
   it ('should move west', () => {
+    console.log("Current position: ", newRobot.currentPosition)
+    newRobot.move('L');
+    console.log("Current position: ", newRobot.currentPosition)
+    newRobot.move('F');
+    console.log("Current position: ", newRobot.currentPosition)
+    expect(newRobot.currentPosition.x).toBe(1);
+    expect(newRobot.currentPosition.y).toBe(2);
+    expect(newRobot.currentPosition.o).toBe('W');
   });
 });
