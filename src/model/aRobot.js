@@ -1,9 +1,11 @@
+'use strict';
+
 const ORIENTATION = ['N', 'E', 'S', 'W'];
 
 class Robot {
   // A robot is constrained by grid - throws error on construction if not on the grid
   constructor(grid, x, y, orientiation) {
-    // initialise with 
+    // initialise with
     if (!grid || !grid.isValid) {
       throw new Error('Invalid grid');
     }
@@ -28,17 +30,17 @@ class Robot {
   }
 
   _validateX(x) {
-    if (x<0) throw new Error('Robot x position out of bounds');
+    if (x < 0) throw new Error('Robot x position out of bounds');
   }
   _validateY(y) {
-    if (y<0) throw new Error('Robot y position out of bounds');
+    if (y < 0) throw new Error('Robot y position out of bounds');
   }
   _validateOrientiation(orientiation) {
     if (!ORIENTATION.includes(orientiation)) throw new Error('Robot orientiation out of bounds');
   }
 
-  _validdateAgainstGrid(x,y) {
-    if (!this._grid.isOn(x,y)) throw new Error('Robot position out of grid bounds');
+  _validdateAgainstGrid(x, y) {
+    if (!this._grid.isOn(x, y)) throw new Error('Robot position out of grid bounds');
   }
 
   _validatePosition(x, y, orientiation) {
@@ -69,18 +71,20 @@ class Robot {
     const targetPosition = this._currentPosition;
 
     switch (instruction) {
-      case 'L':
+      case 'L': {
         // to rotate left (anti-clockwise - step back in the ORIENTIATION array
         //    can't use "%" because it does not work on negative indexes
         let nextIndex = ORIENTATION.indexOf(targetPosition.o) - 1;
         if (nextIndex < 0) nextIndex = ORIENTATION.length - 1;
         targetPosition.o = ORIENTATION[nextIndex];
         break;
-      case 'R':
+      }
+      case 'R': {
         // to rotate left (anti-clockwise - step forward in the ORIENTIATION array
         targetPosition.o = ORIENTATION[(ORIENTATION.indexOf(targetPosition.o) + 1) % ORIENTATION.length];
         break;
-      case 'F':
+      }
+      case 'F': {
         // the orientiation determines the target position when forwarding one step
         switch (targetPosition.o) {
           case 'N':
@@ -101,6 +105,7 @@ class Robot {
             break;
         }
         break;
+      }
     }
 
     // if the target position is not on grid, then hold scent

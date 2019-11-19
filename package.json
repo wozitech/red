@@ -4,7 +4,8 @@
   "description": "Martian Robots Tech Challenge",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint --ext .js ./src ./tests",
+    "pretest": "eslint --ext .js ./src ./tests",
+    "lint:fix": "eslint --fix --ext .js ./src ./tests",
     "test": "jest",
     "coverage": "jest --coverage"
   },
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/wozitech/red#readme",
   "dependencies": {
+    "esprima": "^4.0.1",
     "jest": "^24.9.0"
   },
   "devDependencies": {

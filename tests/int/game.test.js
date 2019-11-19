@@ -1,3 +1,5 @@
+'use strict';
+
 global.console = {
   error: jest.fn(),
   warn: jest.fn(),
@@ -5,8 +7,8 @@ global.console = {
 };
 
 describe('It\'s A Good Game', () => {
-  beforeAll (() => {});
-  beforeEach (() => {});
+  beforeAll(() => {});
+  beforeEach(() => {});
 
   it('should initialise the game with grid', () => {
   });
@@ -33,9 +35,9 @@ describe('It\'s A Good Game', () => {
   });
 });
 
-describe('It\'s A Good Game', () => {
-  beforeAll (() => {});
-  beforeEach (() => {});
+describe('It\'s A Bad Game', () => {
+  beforeAll(() => {});
+  beforeEach(() => {});
 
   it('should fail to initialise robot with no grid', () => {
   });
