@@ -21,33 +21,33 @@ describe('Robot Awareness', () => {
   it('should have starting position', () => {
     // missing grid
     expect(() => {
-      /* eslint-disable no-unused-vars */
+      // eslint-disable-next-line no-unused-vars
       const newRobot = new Robot(null, 1, 1, 'N');
     }).toThrow(Error('Invalid grid'));
 
     // starting x out of bounds
     expect(() => {
-      /* eslint-disable no-unused-vars */
+      // eslint-disable-next-line no-unused-vars
       const newRobot = new Robot(newGrid, -1, 1, 'N');
     }).toThrow(Error('Robot x position out of bounds'));
     expect(() => {
-      /* eslint-disable no-unused-vars */
+      // eslint-disable-next-line no-unused-vars
       const newRobot = new Robot(newGrid, 5, 1, 'N');
     }).toThrow(Error('Robot position out of grid bounds'));
 
     // starting y out of bounds
     expect(() => {
-      /* eslint-disable no-unused-vars */
+      // eslint-disable-next-line no-unused-vars
       const newRobot = new Robot(newGrid, 1, -1, 'N');
     }).toThrow(Error('Robot y position out of bounds'));
     expect(() => {
-      /* eslint-disable no-unused-vars */
+      // eslint-disable-next-line no-unused-vars
       const newRobot = new Robot(newGrid, 1, 5, 'N');
     }).toThrow(Error('Robot position out of grid bounds'));
 
     // starting orientation out of bounds
     expect(() => {
-      /* eslint-disable no-unused-vars */
+      // eslint-disable-next-line no-unused-vars
       const newRobot = new Robot(newGrid, 1, 1, 'L');
     }).toThrow(Error('Robot orientiation out of bounds'));
 
