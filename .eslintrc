@@ -1,5 +1,5 @@
 {
-  "parser": "eslint",
+  "parser": "esprima",
   "extends": [
     "eslint:recommended",
     "prettier",
@@ -42,16 +42,11 @@
     "newline-per-chained-call": 0,
     "import/prefer-default-export": 0,
     "no-mixed-operators": 0,
-    "react/jsx-filename-extension": 0,
-    "react/no-array-index-key": 1,
-    "jsx-a11y/href-no-hash": "off",
     "no-use-before-define": 1,
     "import/no-named-as-default": 0,
     "react/no-danger": 0
   },
   "globals": {
-    "document": true,
-    "window": true
   },
   "env": {
     "node": true,

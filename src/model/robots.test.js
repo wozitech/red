@@ -1,3 +1,5 @@
+'use strict';
+
 global.console = {
   error: jest.fn(),
   warn: jest.fn(),
@@ -5,8 +7,8 @@ global.console = {
 };
 
 describe('Robots Set', () => {
-  beforeAll (() => {});
-  beforeEach (() => {});
+  beforeAll(() => {});
+  beforeEach(() => {});
 
   it('should initialise with no robots', () => {
   });
@@ -22,9 +24,9 @@ describe('Robots Set', () => {
 });
 
 describe('Robot Scent', () => {
-  beforeAll (() => {});
-  beforeEach (() => {});  
-  
+  beforeAll(() => {});
+  beforeEach(() => {});
+
   it('should find no scent', () => {
   });
 
